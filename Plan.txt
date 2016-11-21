@@ -1,0 +1,7 @@
+Features:
+- Scoring system
+- Piece Class
+- Title Screen
+- 2 Player
+- Instructions Screen
+- Show Pieces on the side
