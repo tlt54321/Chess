@@ -1,6 +1,5 @@
-
 public class Piece {
-	public Piece(){
-		
+	public Piece() {
+
 	}
 }

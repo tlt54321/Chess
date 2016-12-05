@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -21,28 +20,32 @@ public class LaunchScreen extends JPanel implements ActionListener {
 	public Color color1;
 	public Color color2;
 
-	Font playerFont;
-	Font settingsFont;
+	private Font playerFont;
+	private Font settingsFont;
 
-	JLabel player1;
-	JLabel player2;
+	private JLabel player1;
+	private JLabel player2;
 
-	JLabel settings;
+	private JLabel settings;
 
-	JLabel checkerColor1;
-	JLabel checkerColor2;
+	private JLabel checkerColor1;
+	private JLabel checkerColor2;
 
-	JTextField enterPlayer1;
-	JTextField enterPlayer2;
+	private JTextField enterPlayer1;
+	private JTextField enterPlayer2;
 
-	JTextField enterColor1;
-	JTextField enterColor2;
+	private JTextField enterColor1;
+	private JTextField enterColor2;
 
-	JButton play;
+	private JButton play;
+
+	private boolean isLaunchComplete;
 
 	LaunchScreen() {
 
 		// Initializing Field Variables
+
+		isLaunchComplete = false;
 
 		settingsFont = new Font("Arial", Font.BOLD, 15);
 		playerFont = new Font("Arial", Font.ITALIC, 12);
@@ -100,25 +103,34 @@ public class LaunchScreen extends JPanel implements ActionListener {
 		enterColor1.setBounds(48, 90, 100, 20);
 		enterColor2.setBounds(48, 110, 100, 20);
 		play.setBounds(20, 150, 100, 100);
+
 	}
 
 	public void actionPerformed(ActionEvent e) {
 
-		// Get Player Names
+		if (e.getSource() == play) {
 
-		chessPlayer1 = enterPlayer1.getText();
-		chessPlayer2 = enterPlayer2.getText();
+			// Get Player Names
 
-		// Get Colors by Calling Method
+			chessPlayer1 = enterPlayer1.getText();
+			chessPlayer2 = enterPlayer2.getText();
 
-		color1 = initializeColors(enterColor1.getText());
-		color2 = initializeColors(enterColor2.getText());
+			// Get Colors by Calling Method
 
-		// Notify User
+			color1 = initializeColors(enterColor1.getText());
+			color2 = initializeColors(enterColor2.getText());
 
-		JOptionPane.showMessageDialog(null, "Let's go!");
+			// Notify User
+
+			// JOptionPane.showMessageDialog(null, "Let's go!");
+			isLaunchComplete = true;
+		}
 
 		// Call Another Constructor in Another Class Here
+	}
+
+	public boolean getLaunchStatus() {
+		return isLaunchComplete;
 	}
 
 	private Color initializeColors(String color) {
