@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -25,10 +24,6 @@ public class LaunchScreen extends JPanel implements ActionListener {
 	Font playerFont;
 	Font settingsFont;
 
-	JFrame frame;
-
-	JPanel panel;
-
 	JLabel player1;
 	JLabel player2;
 
@@ -48,10 +43,6 @@ public class LaunchScreen extends JPanel implements ActionListener {
 	LaunchScreen() {
 
 		// Initializing Field Variables
-
-		frame = new JFrame("Welcome to the world of Chess!");
-
-		panel = new JPanel();
 
 		settingsFont = new Font("Arial", Font.BOLD, 15);
 		playerFont = new Font("Arial", Font.ITALIC, 12);
@@ -74,34 +65,28 @@ public class LaunchScreen extends JPanel implements ActionListener {
 
 		// Settings
 
-		frame.setVisible(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(sideSize, sideSize);
-
 		settings.setFont(settingsFont);
 
 		player1.setFont(playerFont);
 		player2.setFont(playerFont);
 
-		panel.setLayout(null);
+		this.setLayout(null);
 
 		play.setForeground(Color.GREEN);
 		play.addActionListener(this);
 
 		// Adding Components to Each Other
 
-		frame.add(panel);
-
-		panel.add(player1);
-		panel.add(enterPlayer1);
-		panel.add(player2);
-		panel.add(enterPlayer2);
-		panel.add(settings);
-		panel.add(checkerColor1);
-		panel.add(checkerColor2);
-		panel.add(enterColor1);
-		panel.add(enterColor2);
-		panel.add(play);
+		this.add(player1);
+		this.add(enterPlayer1);
+		this.add(player2);
+		this.add(enterPlayer2);
+		this.add(settings);
+		this.add(checkerColor1);
+		this.add(checkerColor2);
+		this.add(enterColor1);
+		this.add(enterColor2);
+		this.add(play);
 
 		// Setting Custom Boundaries
 
@@ -110,18 +95,11 @@ public class LaunchScreen extends JPanel implements ActionListener {
 		player2.setBounds(0, 23, 52, 15);
 		enterPlayer2.setBounds(54, 20, 200, 20);
 		settings.setBounds(0, 53, 63, 40);
-		checkerColor1.setBounds(0, 93, 46, 20);
-		checkerColor2.setBounds(0, 113, 46, 20);
+		checkerColor1.setBounds(0, 93, 54, 20);
+		checkerColor2.setBounds(0, 113, 54, 20);
 		enterColor1.setBounds(48, 90, 100, 20);
 		enterColor2.setBounds(48, 110, 100, 20);
 		play.setBounds(20, 150, 100, 100);
-	}
-
-	public static void main(String[] args) {
-
-		// Call Constructor
-
-		new LaunchScreen();
 	}
 
 	public void actionPerformed(ActionEvent e) {
