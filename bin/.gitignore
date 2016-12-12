@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-/Piece.class
-/Runner.class
-/Window.class
-/Settings.class
-/LaunchScreen.class
 /Board.class
 /Chess.class
-=======
 /LaunchScreen.class
->>>>>>> pr/3
+/Piece.class

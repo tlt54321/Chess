@@ -39,13 +39,13 @@ public class LaunchScreen extends JPanel implements ActionListener {
 
 	private JButton play;
 
-	private boolean isLaunchComplete;
+	private Chess chess;
 
-	LaunchScreen() {
+	LaunchScreen(Chess chess) {
 
 		// Initializing Field Variables
 
-		isLaunchComplete = false;
+		this.chess = chess;
 
 		settingsFont = new Font("Arial", Font.BOLD, 15);
 		playerFont = new Font("Arial", Font.ITALIC, 12);
@@ -123,14 +123,10 @@ public class LaunchScreen extends JPanel implements ActionListener {
 			// Notify User
 
 			// JOptionPane.showMessageDialog(null, "Let's go!");
-			isLaunchComplete = true;
+			chess.changePanel(this, new Board());
 		}
 
 		// Call Another Constructor in Another Class Here
-	}
-
-	public boolean getLaunchStatus() {
-		return isLaunchComplete;
 	}
 
 	private Color initializeColors(String color) {
