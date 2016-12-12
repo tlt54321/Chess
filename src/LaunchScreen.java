@@ -22,6 +22,8 @@ public class LaunchScreen extends JPanel implements ActionListener {
 
 	private Font playerFont;
 	private Font settingsFont;
+	
+	private JLabel welcome;
 
 	private JLabel player1;
 	private JLabel player2;
@@ -49,6 +51,9 @@ public class LaunchScreen extends JPanel implements ActionListener {
 
 		settingsFont = new Font("Arial", Font.BOLD, 15);
 		playerFont = new Font("Arial", Font.ITALIC, 12);
+		
+		welcome = new JLabel("Welcome to 1337 Chess");
+		welcome.setFont(new Font("Arial", Font.BOLD, 32));
 
 		player1 = new JLabel("Player 1: ");
 		player2 = new JLabel("Player 2: ");
@@ -93,10 +98,10 @@ public class LaunchScreen extends JPanel implements ActionListener {
 
 		// Setting Custom Boundaries
 
-		player1.setBounds(0, 3, 52, 15);
-		enterPlayer1.setBounds(54, 0, 200, 20);
-		player2.setBounds(0, 23, 52, 15);
-		enterPlayer2.setBounds(54, 20, 200, 20);
+		player1.setBounds(50, 100, 100, 70);
+		enterPlayer1.setBounds(154, 100, 200, 70);
+		player2.setBounds(450, 100, 100, 70);
+		enterPlayer2.setBounds(554, 100, 200, 70);
 		settings.setBounds(0, 53, 63, 40);
 		checkerColor1.setBounds(0, 93, 54, 20);
 		checkerColor2.setBounds(0, 113, 54, 20);
