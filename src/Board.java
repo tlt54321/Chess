@@ -5,15 +5,15 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class Board extends JPanel {
-	JButton[][] buttons;
+	Tile[][] tiles;
 
 	public Board() {
-		buttons = new JButton[8][8];
+		tiles = new Tile[8][8];
 		this.setLayout(new GridLayout(8,8));
 		for(int i = 0; i < 8; i++){
 			for(int j = 0; j < 8; j++){
-				buttons[i][j] = new JButton();
-				this.add(buttons[i][j], i, j);
+				tiles[i][j] = new Tile();
+				this.add(tiles[i][j], i, j);
 			}
 			
 		}
