@@ -1,9 +1,7 @@
-import java.awt.Dimension;
-
 import javax.swing.JButton;
 
 public class Tile extends JButton{
-	public static final int EMPTY = 0; //for 
+	public static final int EMPTY = 0;
 	public static final int PAWN = 1;
 	public static final int BISHOP = 2;
 	public static final int KNIGHT = 3;
