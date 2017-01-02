@@ -1,10 +1,21 @@
-import javax.swing.JLabel;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class Board extends JPanel {
+	Tile[][] tiles;
 
 	public Board() {
-		JLabel hi = new JLabel("Hi");
-		this.add(hi);
+		tiles = new Tile[8][8];
+		this.setLayout(new GridLayout(8,8));
+		for(int i = 0; i < 8; i++){
+			for(int j = 0; j < 8; j++){
+				tiles[i][j] = new Tile();
+				this.add(tiles[i][j], i, j);
+			}
+			
+		}
 	}
 }
