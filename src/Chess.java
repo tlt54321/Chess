@@ -1,4 +1,7 @@
+import java.awt.Button;
 import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.Panel;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
@@ -17,6 +20,7 @@ public class Chess {
 		launchScreen = new LaunchScreen(this);
 		board = new Board();
 		frame = new JFrame("1337 Chess");
+		frame.setLayout(new GridLayout(2,2));
 		frame.add(launchScreen); // test
 		frame.setTitle("1337 Chess");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,7 +32,7 @@ public class Chess {
 
 	public void changePanel(JPanel removePanel, JPanel addPanel) {
 		frame.remove(removePanel);
-		frame.add(addPanel);
+		frame.add(addPanel, 0, 0);
 		frame.validate();
 		frame.repaint();
 	}
