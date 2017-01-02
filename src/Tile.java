@@ -22,4 +22,9 @@ public class Tile extends JButton{
 	void setTileStatus(int a) {
 		this.tileStatus = a;
 	}
+	void tileImage() {
+		if(tileStatus == 6) {
+			//set image to king pic
+		}
+	}
 }

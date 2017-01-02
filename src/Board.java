@@ -5,7 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class Board extends JPanel {
-	Tile[][] tiles;
+	static Tile[][] tiles;
 
 	public Board() {
 		tiles = new Tile[8][8];
@@ -17,5 +17,8 @@ public class Board extends JPanel {
 			}
 			
 		}
+	}
+	static Tile[][] getTiles() {
+		return tiles;
 	}
 }
