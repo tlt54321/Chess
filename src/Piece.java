@@ -30,4 +30,5 @@ public abstract class Piece {
 	}
 	
 	public abstract void move(int[][] moveToThisLocation);
+	public abstract void lightMovableLocations(Tile t);
 }

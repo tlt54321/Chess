@@ -13,7 +13,13 @@ public class King extends Piece{
 
 	@Override
 	public void move(int[][] moveToThisLocation) {
-		// Given (a,b) move to either (a +/- 1, b), (a, b +/- 1), (a +/- 1, b +/- 1)
+		//Move to where clicked
+		
+	}
+
+	@Override
+	public void lightMovableLocations(Tile t) {
+		// Given (a,b) light: (a +/- 1, b), (a, b +/- 1), (a +/- 1, b +/- 1)
 		
 	}
 
