@@ -10,7 +10,7 @@ public class Chess {
 	private Board board;
 
 	public static void main(String[] args) {
-		Chess game = new Chess();
+		new Chess();
 	}
 
 	public Chess() {

@@ -12,8 +12,6 @@ public class LaunchScreen extends JPanel implements ActionListener {
 
 	// Field Variables
 
-	private final int sideSize = 500;
-
 	public String chessPlayer1;
 	public String chessPlayer2;
 
