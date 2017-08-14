@@ -5,9 +5,9 @@ public abstract class Piece {
 	boolean captured = false;
 	boolean white;
 	
-	int[][] startingLocation;
+	int[] startingLocation;
 	
-	public Piece(int[][] startingLocation, boolean white, String name) {
+	public Piece(int[] startingLocation, boolean white, String name) {
 		this.name = name;
 		this.white = white;
 		this.startingLocation = startingLocation;
@@ -25,9 +25,10 @@ public abstract class Piece {
 		return white;
 	}
 	
-	public int[][] getStartingLocation() {
+	public int[] getStartingLocation() {
 		return startingLocation;
 	}
 	
 	public abstract void move(int[][] moveToThisLocation);
+	public abstract void lightMovableLocations(Tile t);
 }
