@@ -22,6 +22,8 @@ public class LaunchScreen extends JPanel implements ActionListener {
 
 	private Font playerFont;
 	private Font settingsFont;
+	
+	private JLabel welcome;
 
 	private JLabel player1;
 	private JLabel player2;
@@ -47,8 +49,11 @@ public class LaunchScreen extends JPanel implements ActionListener {
 
 		this.chess = chess;
 
-		settingsFont = new Font("Arial", Font.BOLD, 15);
-		playerFont = new Font("Arial", Font.ITALIC, 12);
+		settingsFont = new Font("Arial", Font.BOLD, 30);
+		playerFont = new Font("Arial", Font.ITALIC, 25);
+		
+		welcome = new JLabel("Welcome to 1337 Chess");
+		welcome.setFont(new Font("Arial", Font.BOLD, 40));
 
 		player1 = new JLabel("Player 1: ");
 		player2 = new JLabel("Player 2: ");
@@ -58,11 +63,11 @@ public class LaunchScreen extends JPanel implements ActionListener {
 		checkerColor1 = new JLabel("Color 1: ");
 		checkerColor2 = new JLabel("Color 2: ");
 
-		enterPlayer1 = new JTextField("Enter Some Text");
-		enterPlayer2 = new JTextField("Enter Some Text");
+		enterPlayer1 = new JTextField();
+		enterPlayer2 = new JTextField();
 
-		enterColor1 = new JTextField("Enter Some Text");
-		enterColor2 = new JTextField("Enter Some Text");
+		enterColor1 = new JTextField();
+		enterColor2 = new JTextField();
 
 		play = new JButton("START");
 
@@ -72,14 +77,21 @@ public class LaunchScreen extends JPanel implements ActionListener {
 
 		player1.setFont(playerFont);
 		player2.setFont(playerFont);
+		
+		checkerColor1.setFont(playerFont);
+		checkerColor2.setFont(playerFont);
+
 
 		this.setLayout(null);
 
 		play.setForeground(Color.GREEN);
 		play.addActionListener(this);
+		play.setBackground(Color.GREEN);
+		play.setOpaque(true);
 
 		// Adding Components to Each Other
 
+		this.add(welcome);
 		this.add(player1);
 		this.add(enterPlayer1);
 		this.add(player2);
@@ -93,16 +105,17 @@ public class LaunchScreen extends JPanel implements ActionListener {
 
 		// Setting Custom Boundaries
 
-		player1.setBounds(0, 3, 52, 15);
-		enterPlayer1.setBounds(54, 0, 200, 20);
-		player2.setBounds(0, 23, 52, 15);
-		enterPlayer2.setBounds(54, 20, 200, 20);
-		settings.setBounds(0, 53, 63, 40);
-		checkerColor1.setBounds(0, 93, 54, 20);
-		checkerColor2.setBounds(0, 113, 54, 20);
-		enterColor1.setBounds(48, 90, 100, 20);
-		enterColor2.setBounds(48, 110, 100, 20);
-		play.setBounds(20, 150, 100, 100);
+		welcome.setBounds(180, 20, 500, 50);
+		player1.setBounds(30, 85, 140, 70);
+		enterPlayer1.setBounds(135, 100, 200, 40);
+		player2.setBounds(400, 85, 140, 70);
+		enterPlayer2.setBounds(505, 100, 200, 40);
+		settings.setBounds(10, 200, 300, 40);
+		checkerColor1.setBounds(30, 260, 100, 20);
+		checkerColor2.setBounds(30, 300, 100, 20);
+		enterColor1.setBounds(130, 250, 130, 40);
+		enterColor2.setBounds(130, 290, 130, 40);
+		play.setBounds(250, 450, 300, 60);
 
 	}
 
